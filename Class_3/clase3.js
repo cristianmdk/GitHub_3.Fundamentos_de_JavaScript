@@ -1,3 +1,28 @@
+//FORMAS DE INCREMENTAR UNA VARIABLE
+var age = 29
+age = age + 2 //dos años mas
+age +=1 //un año mas
+age -=4 //cuatro años menos
+age ++ //un año mas --> cuidado con este porque primero muestra age y luego actualiza la variable
+
+
+// REDONDEAR NUMEROS A n DECIMALES
+//la manera de almacenar decimales no estan precisa
+// porque destina una cantidad de bits en la RAM
+var apple = 40.3 //bath
+var basket = apple * 3
+// para evitar esto podemos:
+basket_rd = apple * 3 * 100/100 //best solution
+basket_round = Math.round(apple*3) //redondear a 0 decimales
+
+basket_str = basket.toFixed(2) //tipo str
+basket_flo = parseFloat(basket_str)
+
+
+
+
+
+
 var peso = 75
 peso -= 2 // resta 2 al valor del peso
 peso += 2 // suma 2 al valor del peso
