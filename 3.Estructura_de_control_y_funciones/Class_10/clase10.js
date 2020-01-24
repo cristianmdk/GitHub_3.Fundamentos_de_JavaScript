@@ -1,13 +1,13 @@
 var william =  {
     nombre: 'William',
     apellido: 'Gómez',
-    edad: 34,
+    edad: 18,
     scrumMaster: true,
     cocinero: false,
     dentista: false,
     desarrollador: true,
     piloto:false,
-    cantante:false,
+    cantante:true,
     fullStack: true
 }
 
@@ -44,4 +44,15 @@ function imprimirProfesiones(persona){
 
 }
 
+function EsMayorDeEdad(persona){
+    var mensaje = ("* " + persona.nombre + ' ' +persona.apellido + " es")
+    if (persona.edad >=18){
+        console.log(mensaje,"mayor de edad")
+    }
+    else{
+        console.log(mensaje + " menor de edad")
+    }
+}
+
 imprimirProfesiones(william)
+EsMayorDeEdad(william)
