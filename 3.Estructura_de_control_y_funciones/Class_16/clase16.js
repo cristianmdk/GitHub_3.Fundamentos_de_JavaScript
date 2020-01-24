@@ -1,4 +1,4 @@
-var signo = prompt('¿cuál es su signo?').toLowerCase() //el texto a minuscula
+var signo = prompt('Ingresa una vocal').toLowerCase() //el texto a minuscula
 
 //remplazar tíldes:
 signo = signo.replace('á', 'a')
@@ -8,19 +8,27 @@ signo = signo.replace('ó', 'o')
 signo = signo.replace('ú', 'u')
 
 switch(signo){
-    case 'acuario':
-        console.log('aquí va el texto de acuario')
+    case 'a':
+        console.log('una palablra con esta vocal es ARBOL')
         break
     
-    case 'leo':
-        console.log('saquí va el texto de leo')
+    case 'e':
+        console.log('una palablra con esta vocal es ELEFANTE')
         break
     
-    case 'cancer':
-        console.log('aquí va el texto de cancer')
+    case 'i':
+        console.log('una palablra con esta vocal es IPHONE')
+        break
+    
+    case 'o':
+        console.log('una palablra con esta vocal es OSO')
+        break
+
+    case 'u':
+        console.log('una palablra con esta vocal es URANO')
         break
 
     default:
-        console.log('el signo no es válido')
+        console.log('no es una vocal')
         break
 }
