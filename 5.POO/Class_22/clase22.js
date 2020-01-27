@@ -11,10 +11,18 @@ Persona.prototype.saludar = function (){
 }
 
 Persona.prototype.soyAlto = function (){
-    return this.altura >= 1.7
+    return (this.altura >= 1.7)
 }
 
 var william = new Persona('William', 'Gómez', 1.7)
 var marcelo = new Persona('Marcelo', 'Acuna', 1.8)
 var carlos = new Persona('Carlos','Pérez', 1.6)
 var carmen = new Persona('Carmen', 'Pérez', 1.56)
+
+
+console.log( carlos.soyAlto())
+
+
+
+
+

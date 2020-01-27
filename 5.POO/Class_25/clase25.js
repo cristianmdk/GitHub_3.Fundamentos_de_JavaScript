@@ -31,3 +31,54 @@ class Desarrollador extends Persona{
 var marcelo = new Persona('Marcelo', 'Acuna', 1.8)
 var carlos = new Persona('Carlos','Pérez', 1.6)
 var carmen = new Persona('Carmen', 'Pérez', 1.56) */
+
+
+
+
+
+
+
+
+class Person {
+    constructor (name, surname, height){
+        this.fullname = name + " " +surname
+        this.name = name
+        this.surname = surname
+        this.height = height
+    }
+
+    greet(){
+        console.log(`Hi my name is ${this.fullname}`)
+    }
+
+    imtallerthan(minheight){
+        if (this.height > minheight){
+            console.log(this.fullname + ' is taller than ' + minheight + 'm')
+        }else{
+             console.log(this.fullname + ' is smaller than ' + minheight + 'm')
+        }
+     }
+}
+
+var kiat = new Person('choice','kiatyanyong',1.65)
+kiat.greet()
+console.log('My name is ' + kiat.fullname)
+kiat.imtallerthan(1.5)
+kiat.imtallerthan(1.7)
+
+
+
+
+
+class Developer extends Person {
+    constructor (name, surname, height){
+        super (name, surname, height)
+    }
+
+    greet(){
+        console.log(`Hi my name is ${this.fullname} and Im a developer`)
+    }
+}
+var angulo = new Developer('david', 'angulo', 1.73) 
+angulo.greet()
+angulo.imtallerthan(1.7)
