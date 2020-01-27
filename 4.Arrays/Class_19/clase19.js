@@ -40,3 +40,50 @@ const pasarAlturaACms = persona => ({
 var personasCms = personas.map(pasarAlturaACms)
 
 console.log(personasCms)
+
+
+
+
+
+
+
+
+
+
+
+
+const pasardobeAltura1 = function (persona) {
+    persona.altura = persona.altura * 2
+    return persona
+}
+const pasardobeAltura2 = function (persona) {
+    persona.altura *= 2
+    return persona
+}
+const pasardobeAltura3 = (persona) => {
+    persona.altura *= 2
+    return persona
+}
+const pasardobeAltura4 = (persona) => {
+    persona.altura *= 2
+    return persona
+}
+const pasardobeAltura5 = (persona) => {
+    persona.altura *= 2
+    return {
+        ...persona,
+    }
+}
+const pasardobeAltura6 = (persona) => {
+    return {
+        ...persona,
+        alturaDoble: persona.altura * 2
+    }
+}
+//de esta forma no se modifican los datos
+const pasardobeAltura = (persona) => ({
+    ...persona,
+    alturaDoble: persona.altura * 2
+})
+
+var personasDms = personas.map(pasardobeAltura)

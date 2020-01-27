@@ -28,6 +28,16 @@ var carlos =  {
     altura: 1.80
 }
 
+const esmuyalta = function (persona){
+    var loes = false
+    if (persona.altura > 1.75){
+        loes = true
+    }
+    return loes
+}
+
+
+
 //obtengo las personas altas con la siguinete función:
 const esAlta = ({altura}) => altura >= 1.75
 const esBaja = ({altura}) => altura < 1.75
@@ -41,3 +51,4 @@ var personasAltas = personas.filter(esAlta)
 //filtrar a las personas bajas:
 var personasBajas = personas.filter(esBaja)
 
+var personasmuyaltas = personas.filter(esmuyalta)
