@@ -2,6 +2,44 @@ const API_URL = 'https://swapi.co/api/'
 const PEOPLE_URL = 'people/:id'
 const opts = {crossDomain: true}
 
+function get_character(id){
+    return new Promise(function (resolve, reject){
+        const peopleURL = `${API_URL}${PEOPLE_URL.replace(':id', id)}`
+        $
+         .get(peopleURL, opts, function (data){
+             resolve(data)
+         })
+         .fail( () => reject(id))
+    })
+}
+
+
+get_character(31)
+ .then( (data) => {
+     console.log(`Hola, I'm ${data.name}`)
+     return (get_character(32))
+ })
+ .then((data) => {
+    console.log(`Hola, I'm ${data.name}`)
+    return (get_character(33))
+ })
+ .then((data) => {
+    console.log(`Hola, I'm ${data.name}`)
+    return (get_character(34))
+ })
+ .catch( (id) => console.log(`error with character ${id}`)
+)
+
+
+
+
+
+
+
+
+
+
+
 function obtenerPersonaje(id){
     return new Promise((resolve, reject) => {
         const url = `${API_URL}${PEOPLE_URL.replace(':id', id)}`

@@ -1,22 +1,24 @@
-const API_URL = 'https://swapi.co/api/'
+const API_URL = 'https://swapi.co/api/' 
 const PEOPLE_URL = 'people/:id'
 const opts = {crossDomain: true}
 
-function obtenerPersonajes(id, callBack){
-    const url = `${API_URL}${PEOPLE_URL.replace(':id', id)}`
+
+
+function get_character(id,callback_server){
+    const peopleURL = `${API_URL}${PEOPLE_URL.replace(':id', id)}`
     
-    $.get(url, opts, function(persona){
-        console.log(`hola, yo soy ${persona.name}`)
-        if (callBack) {
-            callBack()
-        }
-    })   
+    //$.get(peopleURL, opts, onResponse)
+    $.get(peopleURL, opts, function (data) { 
+            console.log(`Hola, I'm ${data.name}`)
+            if (callback_server){
+                callback_server()
+            }
+        }   
+    )
 }
 
-obtenerPersonajes(1, function(){
-    obtenerPersonajes(2, function(){
-        obtenerPersonajes(3, function(){
-            obtenerPersonajes(4)
-        })
+get_character(1, function(){
+    get_character(3, function(){
+        get_character(5)
     })
 })

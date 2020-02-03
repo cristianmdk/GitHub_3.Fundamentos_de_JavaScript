@@ -82,3 +82,5 @@ class Developer extends Person {
 var angulo = new Developer('david', 'angulo', 1.73) 
 angulo.greet()
 angulo.imtallerthan(1.7)
+
+

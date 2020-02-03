@@ -1,17 +1,19 @@
-const API_URL = 'https://swapi.co/api/'
+const API_URL = 'https://swapi.co/api/' 
 const PEOPLE_URL = 'people/:id'
+
 const opts = {crossDomain: true}
 
-//el callbacks
-const onPeopleResponse = function(persona){
-    console.log(`hola, yo soy ${persona.name}`)
+const onResponse = function (data) { 
+    console.log(`Hola, I'm ${data.name}`)
 }
 
-function obtenerPersonajes(id){
-    const url = `${API_URL}${PEOPLE_URL.replace(':id', id)}`
-    $.get(url, opts, onPeopleResponse)
+function get_character(n){
+    const peopleURL = `${API_URL}${PEOPLE_URL.replace(':id', n)}`
+    $.get(peopleURL, opts, onResponse)
 }
 
-obtenerPersonajes(1)
-obtenerPersonajes(2)
-obtenerPersonajes(3)
+get_character(1)
+get_character(3)
+get_character(5)
+
+// the Asynchronism of Java cannot allow to know the order of the server's answers
