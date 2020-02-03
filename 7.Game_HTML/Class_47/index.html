@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Simon says</title>
+
+  </head>
+  <body>
+    <div class="gameboard">
+      <div id="celeste" class="color celeste left" data-color="celeste"></div>
+      <div id="violeta" class="color violeta right" data-color="violeta"></div>
+      <div id="naranja" class="color naranja left" data-color="naranja"></div>
+      <div id="verde" class="color verde right" data-color="verde"></div>
+      <button id="btnEmpezar" class="btn-start animated pulse " onclick="empezarJuego()">START GAME</button>
+    </div>
+    <audio src="resources/483602__raclure__game-bump.mp3" id="track"></audio>
+    <audio src="resources/265549__vikuserro__cheap-flash-game-tune.mp3" id="musicaFondo" ></audio>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" type="text/javascript">
+    </script>
+    <script src="juego.js">
+    </script>
+  </body>
+</html>
