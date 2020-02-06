@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bind (this)</title>
+</head>
+<body>
+    <script>
+        /*
+        By default within window.setTimeout(), 
+        the this keyword will be set to the window (or global) object. 
+        When working with class methods that require this to refer to class instances, 
+        you may explicitly bind this to the callback function, 
+        in order to maintain the instance.
+        */
+
+
+        function LateBloomer() {
+            this.petalCount = Math.floor(Math.random() * 12) + 1;
+            console.log(this)
+        }
+
+
+        //bcs I want to call LateBloomer.prototype with this
+        //if I don't use bind(this), then this could mean window
+        LateBloomer.prototype.bloom = function() {
+            window.setTimeout(this.declare.bind(this), 1000);
+            console.log(this.declare.bind(this))
+        };
+
+        LateBloomer.prototype.declare = function() {
+            console.log(`I am a beautiful flower with ${this.petalCount} petals!`);
+        };
+
+        const flower = new LateBloomer();
+        flower.bloom(); 
+    </script>
+</body>
+</html>

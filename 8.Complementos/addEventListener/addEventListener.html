@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>addEventListener</title>
+</head>
+<body>
+    <button id="myBtn">Try it</button>
+    <p id="demo"></p>
+    <script>
+        //element.addEventListener(event, listener);
+        /*event : event can be any valid JavaScript event.
+        Events are used without “on” prefix like use “click” 
+        instead of “onclick” or 
+        “mousedown” instead of “onmousedown”.*/
+        var event = 'click'
+
+        /*listener(handler function) : It can be a JavaScript 
+        function which respond to the event occur.*/
+        function listener (){
+            document.getElementById("demo").innerText = "Hello World"
+        }
+
+        document.getElementById("myBtn").addEventListener(event, listener)
+    </script>
+</body>
+</html>
