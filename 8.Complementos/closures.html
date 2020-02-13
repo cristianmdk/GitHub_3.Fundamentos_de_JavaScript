@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+</head>
+<body>
+    <script>
+//closures is a function which remembers the status of the vars when it is called.
+// Closure: internal function 
+
+function greetings(country){           //the first function is a generator of functions
+    return function (name){     //it will return a function
+        console.log (`hola ${name}, Im from ${country}`) //this is a closure because it has access to vars from outside 
+    }
+}
+
+//internal function
+const spanish_greeting      = greetings ('spain') //this is the parameter which will be remembered by the internal function
+const colombian_greeting    = greetings ('colombia')
+const thai_greeting         = greetings ('thailand')
+
+spanish_greeting('Marcelo')
+colombian_greeting('Oscar')
+thai_greeting('Chanyaporn')
+
+
+
+
+
+
+function add_fun (counter, adder){
+    return function () {
+        counter += adder; 
+        return console.log(counter)
+    }
+}
+
+const add_4 = add_fun(4,2)
+add_4();
+add_4();
+
+const add_fun2 = (counter, adder) => {
+    return () => {
+        counter += adder; 
+        return console.log(counter)
+    }
+}
+
+const add_6 = add_fun2(6,2)
+add_6();
+add_6();
+
+
+    </script>
+</body>
+</html>

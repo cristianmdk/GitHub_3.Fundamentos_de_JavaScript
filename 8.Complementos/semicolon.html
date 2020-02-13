@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semicolon</title>
+</head>
+<body>
+    <script>
+//something is optional
+// there are a few cases where the semicolon is necessary 
+
+
+
+
+//1. when we start the line with a list
+console.log('message:')
+//[1, 2, 3].forEach(element => { console.log(element *2) })
+;[4, 5, 6].forEach(element => { console.log(element *2) })
+
+
+//2. when we start the line with a template string
+const name= 'cristian'
+console.log('message')
+//`my name is ${name}` 
+
+console.log('message2: ')
+;`my name is ${name}` //it wont show this message
+
+
+
+//3. when return is followed by enter is equal to ';'
+function double(x){
+    return 
+    //{original:x, double: x*2}
+}
+function square(x){
+    return {
+        original:x, square: x**2}}
+
+
+    </script>
+</body>
+</html>

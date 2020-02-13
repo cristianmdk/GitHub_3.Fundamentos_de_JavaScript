@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memoization</title>
+</head>
+<body>
+    <script>
+// Memoization: it is an optimization technique that speeds up applications 
+// by storing the results of expensive function calls and returning the cached result 
+// when the same inputs are supplied again.
+
+// memoization allows us to save computation and processing 
+// because it storages the invariable results of a function,
+// and so it is not necessary to re-execute, or recalculate it the function for that value.
+
+// to reduce the number of expected calls
+
+//each function has internal attributes
+// memoizacion 
+function factorial(x) {
+    if (x < 0) return;
+    if (!this.cache) this.cache = {} //if there is not cache, create an empty object 
+    if (this.cache[x]) return this.cache[x]; //ask if we already calculated it
+    if (x===1) return 1;
+    this.cache[x] = x * factorial(x - 1);
+    return this.cache[x]
+}
+
+console.log('factorial: ', factorial(4))
+
+
+const inefficient_square = (x) => {
+    let total = 0
+    for (let i = 0; i < x; i++){
+        for (let j = 0; j < x; j++){
+            total ++;
+        }
+    }
+    return total
+}
+
+
+let start = new Date()
+console.log('inefficient_square: ', inefficient_square(40000))
+console.log('Time inefficient_square: ', new Date()- start)
+
+
+function better_square (x){
+    if (!this.cache) this.cache = {} // if (!this.cache) this.cache = {}
+    if (this.cache[x]) return this.cache[x]
+    
+    let total = 0
+    for (let i = 0; i < x; i++){
+        for (let j = 0; j < x; j++){
+            total ++;
+        }
+    }
+    this.cache[x] = total;
+    
+    return this.cache[x]
+}
+
+start = new Date()
+console.log('better_square: ', better_square(60000))
+console.log('Time better_square: ', new Date()- start)
+
+start = new Date()
+console.log('better_square2: ', better_square(60000))
+console.log('Time better_square2: ', new Date()- start)
+
+
+function memoize (fun) {
+    const results ={}
+    return (...n) => {
+        const nKey = JSON.stringify(n)
+        if (!results[nKey]){
+            results[nKey] = fun(...n)
+        }
+        return results[nKey]
+    }
+
+    // if (!this.cache) this.cache = {}
+    // return (n) => {
+    //     if (this.cache[n]) return this.cache[n]
+    //     this.result = fun(n)
+    //     this.cache[n] = this.result
+    //     return this.result
+    // }
+}
+
+const improved_inefficient_square =  memoize((x) => {
+    let total = 0
+    for (let i = 0; i < x; i++){
+        for (let j = 0; j < x; j++){
+            total ++;
+        }
+    }
+    return total
+    
+})
+
+start = new Date()
+console.log('improved inefficient_square: ', improved_inefficient_square(50000))
+console.log('Time improved inefficient_square: ', new Date()- start)
+
+start = new Date()
+console.log('improved inefficient_square: ', improved_inefficient_square(50000))
+console.log('Time improved inefficient_square: ', new Date()- start)
+
+
+    </script>
+</body>
+</html>

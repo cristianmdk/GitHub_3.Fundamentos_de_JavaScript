@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAR LET and CONST variables</title>
+</head>
+<body>
+    <script>
+var person = {
+    name: 'Cristian',
+    age: 29
+}
+
+
+
+
+// ““var”” es la manera más antigua de declarar variables. 
+// No es muy estricta en cuanto al alcance, 
+// ya que al declarar variables de esta forma, 
+// dichas variables podrán ser accedidas, e incluso modificaddas, 
+// tanto dentro como fuera de los bloques internos en una función.
+
+function Adult_var (){
+    if (person.age > 18){
+        var message = 'He is an adult'
+    } else {
+        var message ='He is not an adult'
+    }
+    console.log (message)
+}
+
+function Adult_var2 (){
+    var message
+    if (person.age > 18){
+        message = 'He is an adult'
+    } else {
+        message ='He is not an adult'
+    }
+    console.log (message)
+}
+
+Adult_var()
+Adult_var2()
+
+
+function Adult_let (){
+    if (person.age > 18){
+        let message = 'He is an adult'
+    } else {
+        let message ='He is not an adult'
+    }
+    console.log (message)
+}
+
+function Adult_let2 (){
+    let message
+    if (person.age > 18){
+        message = 'He is an adult'
+    } else {
+        message ='He is not an adult'
+    }
+    console.log (message)
+}
+
+//Adult_let()
+Adult_let2()
+
+function Adult_const (){
+    let message
+    const full_age = 18
+    if (person.age > full_age){
+        message = 'He is an adult'
+    } else {
+        message ='He is not an adult'
+    }
+    console.log (message)
+}
+
+function Adult_const2 (){
+    let message
+    const full_age = 18
+    full_age = 21
+    if (person.age > full_age){
+        message = 'He is an adult'
+    } else {
+        message ='He is not an adult'
+    }
+    console.log (message)
+}
+
+Adult_const()
+//Adult_const2()
+
+const list_n = [2, 4, 6, 8]
+//list_n = [1 ,2] //cannot
+list_n[2]=5
+list_n.push(9, 10)
+
+
+    </script>
+</body>
+</html>

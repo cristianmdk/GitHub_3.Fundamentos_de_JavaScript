@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursion</title>
+</head>
+<body>
+    <script>
+
+function factorial(x) {
+    if (x < 0) return;
+    if (x === 1) return 1;
+    return x * factorial(x - 1);
+}
+
+console.log(factorial(3))
+
+
+
+
+function division_int (dividend, divisor){
+    if (dividend < divisor) return 0;
+    return (1 + (division_int((dividend-divisor), divisor)))
+}
+
+console.log(division_int(14,3))
+
+    </script>
+</body>
+</html>

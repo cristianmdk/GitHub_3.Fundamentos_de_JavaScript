@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.bind(), .call(), .apply()</title>
+</head>
+<body>
+    <script>
+const cristian = {
+    name: 'Cristian',
+    surname: 'Angulo',
+    age: 29
+}
+
+function greeting (){
+    console.log (`Hola, my name is ${this.name}`)
+    console.log(this.navigator.vendor)
+}
+
+// the 'this' in greeting function is the Window.
+greeting()
+//const greeting_cristian = greeting.call(cristian) //error because cristian doesn't have attribute .navigator.vendor
+
+
+
+
+function add_fun (counter=1, adder=0){
+    counter += adder
+    console.log(`${this.name} = ${counter}`)
+}
+
+const add_cristian_bind     = add_fun.bind(cristian, 2, 2)
+console.log(add_cristian_bind())
+setTimeout(add_fun.bind(cristian, 3), 1000) //it DOESN'T mean we attach cristian to add_fun always
+const add_cristian_call     = add_fun.call(cristian, 4, 2)
+const add_cristian_apply    = add_fun.apply(cristian, [8, 2])
+
+
+// el primer parámetro sera el this
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dates</title>
+</head>
+<body>
+    <script>
+function days_btw_dates (date1, date2){
+    const gap = Math.abs(date1 - date2)
+    //gap is in milliseconds 
+    const from_milliseconds_to_days = 1000 * 60 * 60 * 24
+
+    return Math.floor(gap / from_milliseconds_to_days)
+}
+
+let today = new Date()
+let birthday = new Date(1990, 10, 19)
+
+
+
+    </script>
+</body>
+</html>
