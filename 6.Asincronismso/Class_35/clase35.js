@@ -1,4 +1,4 @@
-const API_URL = 'https://swapi.co/api/'
+const API_URL = 'https://swapi.dev/api/'
 const PEOPLE_URL = 'people/:id'
 const opts = {crossDomain: true}
 
@@ -7,10 +7,10 @@ function get_character(id){
     return new Promise(function (resolve, reject){
         const peopleURL = `${API_URL}${PEOPLE_URL.replace(':id', id)}`
         $
-         .get(peopleURL, opts, function (data){
-             resolve(data)
-         })
-         .fail( () => reject(id))
+            .get(peopleURL, opts, function (data){
+                resolve(data)
+            })
+            .fail( () => reject(id))
     })
 }
 
@@ -56,7 +56,7 @@ async function obtenerPersonajes(){
 
     //simplificamos la función:
     var promesas = ids.map(id => obtenerPersonaje(id))
-    
+
     try{
         var personajes = await Promise.all(promesas) //espera hasta que todas las promesas esten resueltas
         console.log(personajes)

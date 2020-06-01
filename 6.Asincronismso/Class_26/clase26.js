@@ -1,16 +1,16 @@
 //defino la siguiente clase con sus métodos saludar y soyAlto:
 class Persona {
-    constructor(nombre, apellido, altura) {
-        this.name = nombre
-        this.surname = apellido
-        this.height = altura
+    constructor(name, surname, height) {
+        this.name = name
+        this.surname = surname
+        this.height = height
     }
 
     greet(fn) {
         var {name, surname} = this
         console.log(`\nhola, I am ${name} ${surname}`)
         if (fn) {
-            fn(name, surname)   
+            fn(name, surname, false);
         }
     }
 
@@ -26,10 +26,10 @@ class developer extends Persona{
     }
 
     greet(fn){
-        var {name, surname} = this
-        console.log(`\nHola, my name is ${name} ${surname} and I am a developer`)
+        //var {name, surname} = this
+        console.log(`\nHola, my name is ${this.name} ${this.surname} and I am a developer`)
         if (fn) {
-            fn(name, surname, true)   
+            fn(this.name, this.surname, true);
         }
     }
 }
@@ -45,7 +45,7 @@ class developer extends Persona{
 function answer_greetings(name, surname, isDev){
     console.log(`Good morning ${name} ${surname}`)
     if (isDev) { //if the parameter is given it is because he is a developer
-        console.log(`So nice, I didn't you were a developer`)
+        console.log(`So nice, I didn't know you were a developer`)
     }
 }
 
@@ -72,7 +72,7 @@ carmen.greet(answer_greetings)
 // Java takes a functions from the call-stack, it executes it, and it throws it. 
 console.log ('\n\n\n\n\n\n')
 console.log ('1.')
-setTimeout(console.log ('2.'), 2000) //it doesn't work because first it sees the console.log
+//setTimeout(console.log ('2.'), 2000) //it doesn't work because first it sees the console.log
 console.log ('3.')
 
 

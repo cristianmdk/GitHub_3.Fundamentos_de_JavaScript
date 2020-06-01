@@ -1,11 +1,11 @@
-const API_URL = 'https://swapi.co/api/'
+const API_URL = 'https://swapi.dev/api/'
 const PEOPLE_URL = 'people/:id'
 const opts = {crossDomain: true}
 
 
 
 
-//Promise: 
+//Promise:
 //If we want to be sure about Promise can run in out browser we can use a polifilt
 //the polifilt will create a class for running the promises
 //the Promises has 3 values:
@@ -15,24 +15,24 @@ const opts = {crossDomain: true}
 // to call the value of fulfilled we use: .then( ()=>{} )
 // to call the value og rejected we use: .catch( ()=>{} )
 // build a Promise: new Promise(function (resolve, reject){}).then( ()=>{} ).catch( ()=>{} )
-// after fulfilled we can recall fulfilled 
+// after fulfilled we can recall fulfilled
 
 function get_character(id){
     return new Promise(function (resolve, reject){
         const peopleURL = `${API_URL}${PEOPLE_URL.replace(':id', id)}`
         $
-         .get(peopleURL, opts, function (data){
-             resolve(data)
-         })
-         .fail( () => reject(id))
+            .get(peopleURL, opts, function (data){
+                resolve(data)
+            })
+            .fail( () => reject(id))
     })
 }
 
 get_character(32)
- .then( (data) => {
-     console.log(`Hola, I'm ${data.name}`)
- })
- .catch( () => console.log('error'))
+    .then( (data) => {
+        console.log(`Hola, I'm ${data.name}`)
+    })
+    .catch( () => console.log('error'))
 
 
 
